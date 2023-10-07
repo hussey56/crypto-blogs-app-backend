@@ -60,11 +60,15 @@ try {
 await JWTService.storeRefreshToken(refreshToken,user._id)
 res.cookie('accessToken',accessToken,{
     maxAge:1000*60*60*24,
-    httpOnly:true
+    httpOnly:true,
+      sameSite:"None",
+ secure:true
 });
 res.cookie('refreshToken',refreshToken,{
     maxAge:1000*60*60*24,
-    httpOnly:true
+    httpOnly:true,
+      sameSite:"None",
+    secure:true
 });
           const userDto = new UserDTO(user);
             return res.status(201).json({user:userDto,auth:true})
@@ -123,11 +127,15 @@ try {
 
         res.cookie('accessToken',accessToken,{
             maxAge:1000*60*60*24,
-            httpOnly:true
+            httpOnly:true,
+              sameSite:"None",
+            secure:true
         })
         res.cookie('refreshToken',refreshToken,{
             maxAge:1000*60*60*24,
-            httpOnly:true
+            httpOnly:true,
+              sameSite:"None",
+            secure:true
         })
         const userDto = new UserDTO(user);
         return res.status(200).json({user:userDto,auth:true})
@@ -185,11 +193,15 @@ try {
 
             res.cookie('accessToken',accessToken,{
                 maxAge:1000*60*60*24,
-                httpOnly:true
+                httpOnly:true,
+                  sameSite:"None",
+            secure:true
             });
             res.cookie('refreshToken',refreshToken,{
                 maxAge:1000*60*60*24,
-                httpOnly:true
+                httpOnly:true,
+                  sameSite:"None",
+            secure:true
             });
 
         } catch (e) {
